@@ -34,6 +34,9 @@ CSG text = CSG.text("Emmanuel",height-2,6).movez(1)
 CSG newText = text.hull().toolOffset(1)
 mySpinner = mySpinner.union(newText)
 		.difference(text.scalez(5))
+		
 //mySpinner= mySpinner.difference(triang)					
 //mySpinner =mySpinner.union(newText).difference(text)
+mySpinner=mySpinner.setName("FigitSpinner")
 return mySpinner
+

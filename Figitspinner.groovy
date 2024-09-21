@@ -7,7 +7,12 @@ double chamfered = 4
 int numArms =3
 double z = 5
 double y = 35
+double plateheight = 5
 
+//CSG flatCyl = new Cylinder(internalDiameter-1,plateheight).toCSG()
+//CSG smallCyl =new Cylinder(8,plateheight*2).toCSG()
+//CSG grip = flatCyl.union(smallCyl).movex(50)
+//CSG secGrip = grip.mirrorx()
 CSG innerCylinder = new Cylinder(internalDiameter,height).toCSG()
 CSG outerCylinder = new Cylinder(externalDiameter,height,(int)50).toCSG()
 
@@ -31,7 +36,7 @@ CSG text = CSG.text("Emmanuel",height-2,6).movez(1)
 					.moveToCenterX()
 					.movey(rectangleCube.maxY/2)
 					.rotz((360/numArms)/2)
-CSG newText = text.hull().toolOffset(1)
+CSG newText = text.hull().toolOffset(1).toZMin()
 mySpinner = mySpinner.union(newText)
 		.difference(text.scalez(5))
 		

@@ -36,4 +36,4 @@ mySpinner = mySpinner.union(newText)
 		.difference(text.scalez(5))
 //mySpinner= mySpinner.difference(triang)					
 //mySpinner =mySpinner.union(newText).difference(text)
-return [mySpinner]
+return mySpinner
